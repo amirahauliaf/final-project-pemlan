@@ -49,3 +49,46 @@ void data_diri()
 		data_diri();
 	}
 }
+
+
+void menu(){
+	int pilih;
+	printf ("\n--------------APLIKASI PELABUHAN-------------------\n\n");
+	printf ("1. Tambah Data Penumpang\n");
+	printf ("2. Ubah Data Penumpang\n");
+	printf ("3. Pencarian Data Penumpang\n");
+	printf ("4. Pengurutan Data Penumpang\n");
+	printf ("5. Lihat Data Penumpang\n");
+	printf ("6. keluar dari program??\n\n");
+	printf ("Masukkan Pilihan <1-6>: ");
+	scanf ("%d",&pilih);
+	
+	if (pilih == 1){
+		system("cls");
+		tambah();
+	}
+	else if (pilih == 2){
+		system("cls");
+		ubah();
+	}
+	else if (pilih == 4){
+		system("cls");
+		urutkan();
+	}
+	else if (pilih == 5){
+		system("cls");
+		lihat();
+	}
+	else if (pilih == 6){
+		system("cls");
+		printf ("Terima kasih telah menggunakan program");
+		exit(0);
+	}
+	else {
+		system("cls\n");
+		printf ("ANDA SALAH MENGINPUTKAN !!! ULANGI KEMBALI !!!\n");
+		menu();
+	}
+	
+}
+
