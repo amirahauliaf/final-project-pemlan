@@ -10,6 +10,7 @@ int perbarui;
 
 void lihat();
 void urutkan();
+void view(int q);
 void cari();
 void ubah();
 void tambah();
@@ -50,8 +51,8 @@ void data_diri()
 	}
 }
 
-
-void menu(){
+void menu()
+{
 	int pilih;
 	printf ("\n--------------APLIKASI PELABUHAN-------------------\n\n");
 	printf ("1. Tambah Data Penumpang\n");
@@ -59,36 +60,125 @@ void menu(){
 	printf ("3. Pencarian Data Penumpang\n");
 	printf ("4. Pengurutan Data Penumpang\n");
 	printf ("5. Lihat Data Penumpang\n");
-	printf ("6. keluar dari program??\n\n");
+	printf ("6. Keluar dari program??\n\n");
 	printf ("Masukkan Pilihan <1-6>: ");
 	scanf ("%d",&pilih);
 	
-	if (pilih == 1){
+	if (pilih == 1)
+	{
 		system("cls");
 		tambah();
 	}
-	else if (pilih == 2){
+	else if (pilih == 2)
+	{
 		system("cls");
 		ubah();
 	}
-	else if (pilih == 4){
+	else if (pilih == 4)
+	{
 		system("cls");
 		urutkan();
 	}
-	else if (pilih == 5){
+	else if (pilih == 5)
+	{
 		system("cls");
 		lihat();
 	}
-	else if (pilih == 6){
+	else if (pilih == 6)
+	{
 		system("cls");
 		printf ("Terima kasih telah menggunakan program");
 		exit(0);
 	}
-	else {
+	else
+	{
 		system("cls\n");
 		printf ("ANDA SALAH MENGINPUTKAN !!! ULANGI KEMBALI !!!\n");
 		menu();
 	}
 	
+}
+
+void tambah()
+{
+	printf ("\n======================\n");
+	printf (" INPUT DATA PENUMPANG \n");
+	printf ("======================\n");
+	printf ("Masukkan Tanggal Tiket\t\t: ");
+	scanf ("%d", &tanggal[i]);
+	fflush (stdin);
+	printf ("Masukkan Bulan Tiket\t\t: ");
+	scanf ("%d", &bulan[i]);
+	fflush (stdin);
+	printf ("Masukkan Tahun Tiket\t\t: ");
+	scanf ("%d", &tahun[i]);
+	fflush (stdin);
+	printf ("Masukkan Nomer Tiket\t\t: ");
+	scanf ("%d", &nomer_tiket[i]);
+	fflush (stdin);
+	printf ("Masukkan Nomer Kendaraan\t: ");
+	scanf ("%s", &nomer_kendaraan[i]);
+	fflush (stdin);
+	printf("Masukkan Bobot Kendaraan <ton>\t: ");
+	scanf ("%d", &bobot_kendaraan[i]);
+	fflush (stdin);
+	printf ("----- Jenis Kendaraan -----\n");
+	printf ("1. Truk\n");
+	printf ("2. Bus\n");
+	printf ("3. Mini Bus\n");
+	printf ("4. Mobil\n");
+	printf ("5. Motor\n");
+	printf ("6. Lainnya\n");
+	printf ("Pilih Jenis Kendaraan <1-6>\t: ");
+	scanf ("%d", &jenis_kendaraan[i]);
+	if (jenis_kendaraan[i] >= 7)
+	{
+		printf (" Salah Menginputkan Pilihan!!! Ulangi Lagi !!");
+		getch ();
+		system ("cls");
+		tambah();
+	}
+	else
+	{
+		goto tujuan;
+	}
+	
+	tujuan:
+	printf("---- Tujuan Pelabuhan ----\n");
+	printf ("1. Pelabuhan Ketapang\n");
+	printf ("2. Pelabuhan Padang Bali\n");
+	printf ("3. Pelabuhan Lembar\n");
+	printf ("4. Pelabuhan Tanjung Perak\n");
+	printf ("5. Lainnya\n");
+	printf ("Pilih Tujuan Pelabuhan<1-5>\t: ");
+	scanf ("%d", &tujuan_pelabuhan[i]);
+	if (tujuan_pelabuhan[i] >= 6)
+	{
+		printf ("Salah Menginputkan Pilihan!!! Ulangi Lagi!!");
+		getch();
+		system ("cls");
+		tambah();
+	}
+	i=i+1;
+
+	if (i>=2)
+	{
+		for (g=0;g<i-1;g++)
+		{
+			if (nomer_tiket[i-1]==nomer_tiket[g])
+			{
+				printf ("Nomer tiket ini sudah terdaftar!!\nMasukkan nomer yang lain!!");
+				nomer_tiket[i-1]=0;
+				hapus_data=+1;
+			}
+		} 
+		if(hapus_data>0)
+		{
+			printf("\nPenghapusan Sukses");
+		}
+	}
+	getch();
+	system("cls\n");
+	menu();
 }
 
