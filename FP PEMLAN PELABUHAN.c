@@ -60,7 +60,7 @@ void menu()
 	printf ("3. Pengurutan Data Penumpang\n");
 	printf ("4. Ubah Data Penumpang\n");
 	printf ("5. Lihat Data Penumpang\n");
-	printf ("6. Keluar dari program?\n\n");
+	printf ("6. Keluar Dari program?\n\n");
 	printf ("Masukkan Pilihan <1-6>: ");
 	scanf ("%d",&pilih);
 	
@@ -220,7 +220,7 @@ void cari()
 	printf ("==========================\n");
 	printf ("1. Nomer Tiket\n");
 	printf ("2. Bobot Kendaraan\n");
-	printf ("3. kembali ke menu?\n\n");
+	printf ("3. Kembali Ke Menu?\n\n");
 	printf ("Masukkan Pilihan <1-3>: ");
 	scanf("%d", &pilihan);
 
@@ -278,5 +278,117 @@ void cari()
 	getch();
 	system("cls");		
 	menu();
+}
+
+void view(int q)
+{
+	if (i==0)
+	{
+		printf ("Data Penumpang Tidak Ada");
+	}
+	else 
+	{
+		printf ("Data ke-%d\n", q+1);
+		printf ("Tanggal tiket\t\t\t: %d", tanggal[q]);
+		printf ("\nBulan Tiket\t\t\t: ");
+		if (bulan[q]==1)
+		{
+			printf ("Januari\n");
+		}
+		else if (bulan[q]==2)
+		{
+			printf ("Februari\n");
+		}
+		else if (bulan[q]==3)
+		{
+			printf ("Maret\n");
+		}
+		else if (bulan[q]==4)
+		{
+			printf ("April\n");
+		}
+		else if (bulan[q]==5)
+		{
+			printf ("Mei\n");
+		}
+		else if (bulan[q]==6)
+		{
+			printf ("Juni\n");
+		}
+		else if (bulan[q]==7)
+		{
+			printf ("July\n");
+		}
+		else if (bulan[q]==8)
+		{
+			printf ("Agustus\n");
+		}
+		else if (bulan[q]==9)
+		{
+			printf ("September\n");
+		}
+		else if (bulan[q]==10)
+		{
+			printf ("Oktober\n");
+		}
+		else if (bulan[q]==11)
+		{
+			printf ("November\n");
+		}
+		else if (bulan[q]==12)
+		{
+			printf ("Desember\n");
+		}
+		printf ("Tahun Tiket\t\t\t: %d", tahun[q]);
+		printf ("\nNomor Tiket\t\t\t: %d", nomer_tiket[q]);
+		printf ("\nNomor Kendaraan Penumpang\t: %s", nomer_kendaraan[q]);
+    	printf ("\nJenis Kendaraan Penumpang\t: ");
+    	if (jenis_kendaraan[q]==1)
+		{
+      	  printf ("Truk");
+		}
+		else if (jenis_kendaraan[q]==2)
+		{
+        	printf ("Bus");
+		}
+		else if (jenis_kendaraan[q]==3)
+		{
+        	printf ("Mini Bus");
+		}
+		else if (jenis_kendaraan[q]==4)
+		{
+        	printf ("Mobil");
+		}
+		else if (jenis_kendaraan[q]==5)
+		{
+        	printf ("Motor");
+		}
+		else if (jenis_kendaraan[q]==6)
+		{
+        	printf ("Lainnya");
+		}
+    	printf ("\nBobot Kendaraan Penumpang\t: %d ton", bobot_kendaraan[q]);
+		printf ("\nTujuan Pelabuhan Penumpang\t: ");
+    	if (tujuan_pelabuhan[q]==1)
+		{
+        	printf ("Pelabuhan Ketapang\n\n");
+		}
+		else if (tujuan_pelabuhan[q]==2)
+		{
+        	printf ("Pelabuhan Padang Bali \n\n");
+		}
+		else if (tujuan_pelabuhan[q]==3)
+		{
+        	printf ("Pelabuhan Lembar \n\n");
+		}
+		else if (tujuan_pelabuhan[q]==4)
+		{
+        	printf ("Pelabuhan Tanjung Perak \n\n");
+		}
+		else if (tujuan_pelabuhan[q]==5)
+		{
+       		printf ("Lainnya \n\n");
+		}
+	}
 }
 
