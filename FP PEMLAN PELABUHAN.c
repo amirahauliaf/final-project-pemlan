@@ -56,11 +56,11 @@ void menu()
 	int pilih;
 	printf ("\n--------------APLIKASI PELABUHAN-------------------\n\n");
 	printf ("1. Tambah Data Penumpang\n");
-	printf ("2. Ubah Data Penumpang\n");
-	printf ("3. Pencarian Data Penumpang\n");
-	printf ("4. Pengurutan Data Penumpang\n");
+	printf ("2. Pencarian Data Penumpang\n");
+	printf ("3. Pengurutan Data Penumpang\n");
+	printf ("4. Ubah Data Penumpang\n");
 	printf ("5. Lihat Data Penumpang\n");
-	printf ("6. Keluar dari program??\n\n");
+	printf ("6. Keluar dari program?\n\n");
 	printf ("Masukkan Pilihan <1-6>: ");
 	scanf ("%d",&pilih);
 	
@@ -72,12 +72,17 @@ void menu()
 	else if (pilih == 2)
 	{
 		system("cls");
-		ubah();
+		cari();
+	}
+	else if (pilih ==3)
+	{
+		system("cls");
+		urutkan();
 	}
 	else if (pilih == 4)
 	{
 		system("cls");
-		urutkan();
+		ubah();
 	}
 	else if (pilih == 5)
 	{
@@ -95,9 +100,9 @@ void menu()
 		system("cls\n");
 		printf ("ANDA SALAH MENGINPUTKAN !!! ULANGI KEMBALI !!!\n");
 		menu();
-	}
-	
+	}	
 }
+
 
 void tambah()
 {
@@ -179,6 +184,99 @@ void tambah()
 	}
 	getch();
 	system("cls\n");
+	menu();
+}
+
+int cariTiket(int arr[], int n, int cari)
+{
+	int i;
+	for(i=0;i<=n;i++)
+	{
+		if(cari==arr[i])
+		{
+			return i;	
+		}
+	}
+	return -1;
+}
+
+int cariBobot(int arr[], int n, int cari)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		if(cari==arr[i]){
+			return i;	
+		}
+	}
+	return -1;
+}
+
+void cari()
+{		
+	int pilihan;
+	printf ("==========================\n");
+	printf (" PENCARIAN DATA PENUMPANG \n");
+	printf ("==========================\n");
+	printf ("1. Nomer Tiket\n");
+	printf ("2. Bobot Kendaraan\n");
+	printf ("3. kembali ke menu?\n\n");
+	printf ("Masukkan Pilihan <1-3>: ");
+	scanf("%d", &pilihan);
+
+	if (pilihan == 1)
+	{
+		system("cls");
+		int cari_tiket;
+		printf ("Masukkan Nomer Tiket Yang Dicari: ");
+		scanf ("%d", &cari_tiket);	
+		int t;
+		t = cariTiket(nomer_tiket, i, cari_tiket);
+		
+		if(t==-1)
+		{
+			printf("Data Tidak Ditemukan\n");
+		}
+		else
+		{
+			view(t);
+			getch();
+		}
+	}
+	if (pilihan == 2)
+	{
+		system("cls");
+		int cari_bobot;
+		printf ("Masukkan Bobot Kendaraan Yang Dicari: "); 
+		scanf ("%d", &cari_bobot);
+	
+		int pen;
+		pen = cariBobot(bobot_kendaraan, i, cari_bobot);
+	
+		if(pen==-1)
+		{
+			printf("Data Tidak Ditemukan\n");
+		}
+		else
+		{
+			view(pen);
+			getch();
+		}
+	}
+	if (pilihan == 3)
+	{
+		system("cls");
+		menu();
+	}
+	
+	else
+	{
+		system("cls\n");
+		printf (" ");
+		cari();
+	}
+	getch();
+	system("cls");		
 	menu();
 }
 
