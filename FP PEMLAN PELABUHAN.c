@@ -392,3 +392,83 @@ void view(int q)
 	}
 }
 
+
+int getMax(int array[], int size, int cari)
+{
+	int i;
+  	int max = array[0];
+  	//mencari data yang terbesar untuk membuat array
+  	for ( i = 1; i < size; i++){
+  		if (array[i] > max){
+  			max = array[i];
+		  }
+	}
+    return max;
+}
+
+void bucketSort(int array[], int size, int cari)
+{
+	int i,j;
+  	int bucket[15];
+  	//array juga dapat dibuat menjadi konstan artinya nilai tidak dapat diubah selama program berjalan.
+  	const int max = getMax(array, size, cari);
+  	//membuat array baru sebanyak nomor tiket terbesar untuk menyimpan nomor tiket dan menjadikannya= 0
+  	for ( i = 0; i <= max; i++)
+  	{
+    	bucket[i] = 0;
+  	}
+  	//mengurangi banyak buket sehingga sama dengan banyak data
+  	for ( i = 0; i < size; i++)
+  	{
+    	bucket[array[i]]++;
+  	}
+  	//pemetaan peletakan angka dalam array
+  	for ( i = 0, j = 0; i <= max; i++)
+  	{
+    	while (bucket[i] > 0)
+    {
+	array[j++] = i;
+    bucket[i]--;
+    }
+  }
+}
+
+void printArray(int array[], int size, int cari)
+{
+	int i,q;
+	printf ("--- SETELAH DI URUTKAN --- \n\n");
+  	for ( i = 0; i < size; ++i)
+  	{
+		printf("Nomer Tiket: %d  \n", array[i]);
+		
+	}
+//	for(i=0;i<=size;i++)
+//	{
+//		if(cari==array[i]){
+//		printf ("\nNomor Kendaraan Penumpang\t: %s", nomer_kendaraan[cari]);
+//		}
+//	}
+//	
+	
+}
+
+void urutkan()
+{
+	int mencari;
+	if (i==0)
+	{
+		printf ("Data Penumpang Tidak Ada");
+	}
+	else 
+	{
+		printf ("mengurutkan berdasarkan nomor tiket: \n\n");
+		int size = i;
+		bucketSort(nomer_tiket, size, mencari);
+		printf("nomor tiket yang telah diurutkan : \n");
+  		printArray(nomer_tiket, size, mencari);
+	}
+	getch();
+	system("cls");
+	menu();
+}
+
