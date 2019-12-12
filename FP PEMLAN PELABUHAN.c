@@ -50,17 +50,16 @@ void data_diri()
 		data_diri();
 	}
 }
-
 void menu()
 {
 	int pilih;
 	printf ("\n--------------APLIKASI PELABUHAN-------------------\n\n");
 	printf ("1. Tambah Data Penumpang\n");
-	printf ("2. Pencarian Data Penumpang\n");
-	printf ("3. Pengurutan Data Penumpang\n");
-	printf ("4. Ubah Data Penumpang\n");
-	printf ("5. Lihat Data Penumpang\n");
-	printf ("6. Keluar Dari program?\n\n");
+	printf ("2. Ubah Data Penumpang\n");
+	printf ("3. Lihat Data Penumpang\n");
+	printf ("4. Pencarian Data Penumpang\n");
+	printf ("5. Pengurutan Data Penumpang\n");
+	printf ("6. Keluar dari program?\n\n");
 	printf ("Masukkan Pilihan <1-6>: ");
 	scanf ("%d",&pilih);
 	
@@ -72,22 +71,22 @@ void menu()
 	else if (pilih == 2)
 	{
 		system("cls");
-		cari();
+		ubah();
 	}
 	else if (pilih ==3)
 	{
 		system("cls");
-		urutkan();
+		lihat();
 	}
 	else if (pilih == 4)
 	{
 		system("cls");
-		ubah();
+		cari();
 	}
 	else if (pilih == 5)
 	{
 		system("cls");
-		lihat();
+		urutkan();
 	}
 	else if (pilih == 6)
 	{
@@ -186,7 +185,6 @@ void tambah()
 	system("cls\n");
 	menu();
 }
-
 int cariTiket(int arr[], int n, int cari)
 {
 	int i;
@@ -220,7 +218,7 @@ void cari()
 	printf ("==========================\n");
 	printf ("1. Nomer Tiket\n");
 	printf ("2. Bobot Kendaraan\n");
-	printf ("3. Kembali Ke Menu?\n\n");
+	printf ("3. kembali ke menu?\n\n");
 	printf ("Masukkan Pilihan <1-3>: ");
 	scanf("%d", &pilihan);
 
@@ -279,6 +277,7 @@ void cari()
 	system("cls");		
 	menu();
 }
+
 
 void view(int q)
 {
@@ -393,27 +392,25 @@ void view(int q)
 }
 
 
-int getMax(int array[], int size, int cari)
+int getMax(int array[], int size)
 {
 	int i;
   	int max = array[0];
   	//mencari data yang terbesar untuk membuat array
-  	for ( i = 1; i < size; i++)
-	{
-  		if (array[i] > max)
-		{
+  	for ( i = 1; i < size; i++){
+  		if (array[i] > max){
   			max = array[i];
-		}
+		  }
 	}
     return max;
 }
 
-void bucketSort(int array[], int size, int cari)
+void bucketSort(int array[], int size)
 {
 	int i,j;
   	int bucket[15];
   	//array juga dapat dibuat menjadi konstan artinya nilai tidak dapat diubah selama program berjalan.
-  	const int max = getMax(array, size, cari);
+  	const int max = getMax(array, size);
   	//membuat array baru sebanyak nomor tiket terbesar untuk menyimpan nomor tiket dan menjadikannya= 0
   	for ( i = 0; i <= max; i++)
   	{
@@ -435,7 +432,7 @@ void bucketSort(int array[], int size, int cari)
   }
 }
 
-void printArray(int array[], int size, int cari)
+void printArray(int array[], int size)
 {
 	int i,q;
 	printf ("--- SETELAH DI URUTKAN --- \n\n");
@@ -444,14 +441,6 @@ void printArray(int array[], int size, int cari)
 		printf("Nomer Tiket: %d  \n", array[i]);
 		
 	}
-//	for(i=0;i<=size;i++)
-//	{
-//		if(cari==array[i]){
-//		printf ("\nNomor Kendaraan Penumpang\t: %s", nomer_kendaraan[cari]);
-//		}
-//	}
-//	
-	
 }
 
 void urutkan()
@@ -463,16 +452,18 @@ void urutkan()
 	}
 	else 
 	{
+		int tiket;
 		printf ("mengurutkan berdasarkan nomor tiket: \n\n");
 		int size = i;
-		bucketSort(nomer_tiket, size, mencari);
+		bucketSort(nomer_tiket, size);
 		printf("nomor tiket yang telah diurutkan : \n");
-  		printArray(nomer_tiket, size, mencari);
+  		printArray(nomer_tiket, size);
 	}
 	getch();
 	system("cls");
 	menu();
 }
+
 
 void ubah()
 {
@@ -666,6 +657,103 @@ void ubah()
 	}
 	getch();
 	system ("cls");
+	menu();
+}
+
+void lihat(){
+	if (i==0){
+		printf ("Data Penumpang Tidak Ada");
+	}
+	else {
+		printf ("\nData yang telah dimasukkan :\n\n");
+		for (b=0;b<i;b++){
+			if (nomer_tiket[b]==0){
+				printf (" ");
+			}
+			else {
+				printf ("Data ke-%d\n\n",b+1);
+				printf ("Tanggal tiket: %d",tanggal[b]);
+				printf ("\nBulan Tiket:");
+				if (bulan[b]==1){
+					printf ("Januari\n");
+				}
+				else if (bulan[b]==2){
+					printf ("Februari\n");
+				}
+				else if (bulan[b]==3){
+					printf ("Maret\n");
+				}
+				else if (bulan[b]==4){
+					printf ("April\n");
+				}
+				else if (bulan[b]==5){
+					printf ("Mei\n");
+				}
+				else if (bulan[b]==6){
+					printf ("Juni\n");
+				}
+				else if (bulan[b]==7){
+					printf ("July\n");
+				}
+				else if (bulan[b]==8){
+					printf ("Agustus\n");
+				}
+				else if (bulan[b]==9){
+					printf ("September\n");
+				}
+				else if (bulan[b]==10){
+					printf ("Oktober\n");
+				}
+				else if (bulan[b]==11){
+					printf ("November\n");
+				}
+				else if (bulan[b]==12){
+					printf ("Desember\n");
+				}
+				printf ("Tahun Tiket: %d",tahun[b]);
+				printf ("\nNomor Tiket :%d",nomer_tiket[b]);
+				printf ("\nNomor Kendaraan Penumpang: %s",nomer_kendaraan[b]);
+        		printf ("\nJenis Kendaraan Penumpang: ");
+        		if (jenis_kendaraan[b]==1){
+        			printf ("Truk");
+				}
+				else if (jenis_kendaraan[b]==2){
+        			printf ("Bus");
+				}
+				else if (jenis_kendaraan[b]==3){
+        			printf ("Mini Bus");
+				}
+				else if (jenis_kendaraan[b]==4){
+        			printf ("Mobil");
+				}
+				else if (jenis_kendaraan[b]==5){
+        			printf ("Motor");
+				}
+				else if (jenis_kendaraan[b]==6){
+        			printf ("Lainnya");
+				}
+        		printf ("\nBobot Kendaraan Penumpang: %d ton",bobot_kendaraan[b]);
+        		printf ("\nTujuan Pelabuhan Penumpang: ");
+        		if (tujuan_pelabuhan[b]==1){
+        			printf ("Pelabuhan Ketapang\n\n");
+				}
+				else if (tujuan_pelabuhan[b]==2){
+        			printf ("Pelabuhan Padang Bali \n\n");
+				}
+				else if (tujuan_pelabuhan[b]==3){
+        			printf ("Pelabuhan Lembar \n\n");
+				}
+				else if (tujuan_pelabuhan[b]==4){
+        			printf ("Pelabuhan Tanjung Perak \n\n");
+				}
+				else if (tujuan_pelabuhan[b]==5){
+        			printf ("Lainnya \n\n");
+				}
+			}
+		}
+	}
+	getch();
+	system("cls");
 	menu();
 }
 
