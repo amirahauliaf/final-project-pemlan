@@ -5,12 +5,12 @@
 int nomer_tiket[15], jenis_kendaraan[15], bobot_kendaraan[15], tujuan_pelabuhan[15];
 int tanggal[15], bulan[15], tahun[15];
 char nomer_kendaraan[15][15];
-int i=0, g, hapus_data=0, q;
+int i=0, g, hapus_data=0, q,b;
 int perbarui;
 
+void view(int q);
 void lihat();
 void urutkan();
-void view(int q);
 void cari();
 void ubah();
 void tambah();
@@ -50,6 +50,7 @@ void data_diri()
 		data_diri();
 	}
 }
+
 void menu()
 {
 	int pilih;
@@ -101,7 +102,6 @@ void menu()
 		menu();
 	}	
 }
-
 
 void tambah()
 {
@@ -185,6 +185,7 @@ void tambah()
 	system("cls\n");
 	menu();
 }
+
 int cariTiket(int arr[], int n, int cari)
 {
 	int i;
@@ -278,7 +279,6 @@ void cari()
 	menu();
 }
 
-
 void view(int q)
 {
 	if (i==0)
@@ -341,10 +341,10 @@ void view(int q)
 		printf ("Tahun Tiket\t\t\t: %d", tahun[q]);
 		printf ("\nNomor Tiket\t\t\t: %d", nomer_tiket[q]);
 		printf ("\nNomor Kendaraan Penumpang\t: %s", nomer_kendaraan[q]);
-		printf ("\nJenis Kendaraan Penumpang\t: ");
-		if (jenis_kendaraan[q]==1)
+    	printf ("\nJenis Kendaraan Penumpang\t: ");
+    	if (jenis_kendaraan[q]==1)
 		{
-			printf ("Truk");
+        	printf ("Truk");
 		}
 		else if (jenis_kendaraan[q]==2)
 		{
@@ -366,9 +366,9 @@ void view(int q)
 		{
         	printf ("Lainnya");
 		}
-		printf ("\nBobot Kendaraan Penumpang\t: %d ton", bobot_kendaraan[q]);
+    	printf ("\nBobot Kendaraan Penumpang\t: %d ton", bobot_kendaraan[q]);
 		printf ("\nTujuan Pelabuhan Penumpang\t: ");
-		if (tujuan_pelabuhan[q]==1)
+    	if (tujuan_pelabuhan[q]==1)
 		{
         	printf ("Pelabuhan Ketapang\n\n");
 		}
@@ -390,7 +390,6 @@ void view(int q)
 		}
 	}
 }
-
 
 int getMax(int array[], int size)
 {
@@ -464,122 +463,122 @@ void urutkan()
 	menu();
 }
 
-
 void ubah()
 {
 	if (i==0)
 	{
 		printf ("Tidak ada data penumpang\n");
 	}
-	else 
+	else
 	{
+		int u;
 		printf ("Data Penumpang yang telah dimasukkan:\n");
-		for (q=0;q<i;q++)
+		for (u=0;u<i;u++)
 		{
-			if (nomer_tiket[q]==0)
+			if (nomer_tiket[u]==0)
 			{
 				printf (" ");
 			}
 			else
 			{
-				printf ("Data ke-%d\n\n",q+1);
-				printf ("Tanggal tiket: %d\n",tanggal[q]);
+				printf ("Data ke-%d\n\n",u+1);
+				printf ("Tanggal tiket: %d\n",tanggal[u]);
 				printf ("Bulan Tiket: ");
-				if (bulan[q]==1)
+				if (bulan[u]==1)
 				{
 					printf ("Januari\n");
 				}
-				else if (bulan[q]==2)
+				else if (bulan[u]==2)
 				{
 					printf ("Februari\n");
 				}
-				else if (bulan[q]==3)
+				else if (bulan[u]==3)
 				{
 					printf ("Maret\n");
 				}
-				else if (bulan[q]==4)
+				else if (bulan[u]==4)
 				{
 					printf ("April\n");
 				}
-				else if (bulan[q]==5)
+				else if (bulan[u]==5)
 				{
 					printf ("Mei\n");
 				}
-				else if (bulan[q]==6)
+				else if (bulan[u]==6)
 				{
 					printf ("Juni\n");
 				}
-				else if (bulan[q]==7)
+				else if (bulan[u]==7)
 				{
 					printf ("July\n");
 				}
-				else if (bulan[q]==8)
+				else if (bulan[u]==8)
 				{
 					printf ("Agustus\n");
 				}
-				else if (bulan[q]==9)
+				else if (bulan[u]==9)
 				{
 					printf ("September\n");
 				}
-				else if (bulan[q]==10)
+				else if (bulan[u]==10)
 				{
 					printf ("Oktober\n");
 				}
-				else if (bulan[q]==11)
+				else if (bulan[u]==11)
 				{
 					printf ("November\n");
 				}
-				else if (bulan[q]==12)
+				else if (bulan[u]==12)
 				{
 					printf ("Desember\n");
 				}
-				printf ("Tahun Tiket: %d",tahun[q]);
-				printf ("\nNomor Tiket :%d",nomer_tiket[q]);
-				printf ("\nNomor Kendaraan Penumpang: %s",nomer_kendaraan[q]);
+				printf ("Tahun Tiket: %d",tahun[u]);
+				printf ("\nNomor Tiket :%d",nomer_tiket[u]);
+				printf ("\nNomor Kendaraan Penumpang: %s",nomer_kendaraan[u]);
         		printf ("\nJenis Kendaraan Penumpang: ");
-        		if (jenis_kendaraan[q]==1)
+        		if (jenis_kendaraan[u]==1)
 				{
         			printf ("Truk");
 				}
-				else if (jenis_kendaraan[q]==2)
+				else if (jenis_kendaraan[u]==2)
 				{
         			printf ("Bus");
 				}
-				else if (jenis_kendaraan[q]==3)
+				else if (jenis_kendaraan[u]==3)
 				{
         			printf ("Mini Bus");
 				}
-				else if (jenis_kendaraan[q]==4)
+				else if (jenis_kendaraan[u]==4)
 				{
         			printf ("Mobil");
 				}
-				else if (jenis_kendaraan[q]==5)
+				else if (jenis_kendaraan[u]==5)
 				{
         			printf ("Motor");
 				}
-				else if (jenis_kendaraan[q]==6)
+				else if (jenis_kendaraan[u]==6)
 				{
         			printf ("Lainnya");
 				}
-        		printf ("\nBobot Kendaraan Penumpang: %d kg",bobot_kendaraan[q]);
+        		printf ("\nBobot Kendaraan Penumpang: %d kg",bobot_kendaraan[u]);
         		printf ("\nTujuan Pelabuhan Penumpang:");
-        		if (tujuan_pelabuhan[q]==1)
+        		if (tujuan_pelabuhan[u]==1)
 				{
         			printf ("Pelabuhan Ketapang\n");
 				}
-				else if (tujuan_pelabuhan[q]==2)
+				else if (tujuan_pelabuhan[u]==2)
 				{
         			printf ("Pelabuhan Padang Bali \n\n");
 				}
-				else if (tujuan_pelabuhan[q]==3)
+				else if (tujuan_pelabuhan[u]==3)
 				{
         			printf ("Pelabuhan Lembar \n\n");
 				}
-				else if (tujuan_pelabuhan[q]==4)
+				else if (tujuan_pelabuhan[u]==4)
 				{
         			printf ("Pelabuhan Tanjung Perak \n\n");
 				}
-				else if (tujuan_pelabuhan[q]==5)
+				else if (tujuan_pelabuhan[u]==5)
 				{
         			printf ("Lainnya\n\n");
 				}
@@ -613,7 +612,7 @@ void ubah()
 			scanf ("%s",&nomer_kendaraan[p]);
 			fflush (stdin);
 			printf ("Masukkan Bobot Kendaraan<ton>: ");
-			scanf ("%d",&bobot_kendaraan);
+			scanf ("%d",&bobot_kendaraan[p]);
 			fflush (stdin);
 			printf ("----- Jenis Kendaraan -----\n");
 			printf ("1. Truk\n");
@@ -625,8 +624,7 @@ void ubah()
 			printf ("Pilih Jenis Kendaraan <1-6>: ");
 			scanf ("%d",&jenis_kendaraan[p]);
 			fflush (stdin);
-			if (jenis_kendaraan[p] >= 7)
-			{
+			if (jenis_kendaraan[p] >= 7){
 				printf (" Salah Menginputkan Pilihan!!! Ulangi Lagi !!");
 				getch();
 				system ("cls");
@@ -641,20 +639,19 @@ void ubah()
 			printf ("Pilih Tujuan Pelabuhan<1-5>: ");
 			scanf ("%d", &tujuan_pelabuhan[p]);
 			fflush (stdin);
-			if (tujuan_pelabuhan[p] >= 6)
-			{
+			if (tujuan_pelabuhan[p] >= 6){
 				printf (" Salah Menginputkan Pilihan!!! Ulangi Lagi !!");
 				getch();
 				system ("cls");
 				ubah();
 			}
 		}
-		else 
+		else
 		{
 			printf ("Data tidak ditemukan");
 		}
 
-	}
+		}
 	getch();
 	system ("cls");
 	menu();
