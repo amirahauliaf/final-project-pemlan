@@ -25,3 +25,7 @@
 <p>
 	Kesimpulan final project yang kami kerjakan adalah kami menggunakan pemrograman bahasa C dengan mengimplementasikan metode CRUD (Create, Read, Update, Delete) dengan tambahan searching berupa Linier (Rekursive Search) dan sorting berupa Bucked Sort, selain itu didalam program ini mengutamakan user friendly system dan error handling. Hal tersebut dilakukan agar mempermudah pengguna program dalam mengakses berbagai fitur yang telah kami sediakan. Sekian laporan yang dapat kami sampaikan terkait final project mata kuliah pemrograman lanjut dengan judul “Aplikasi Pelabuhan”. Dengan minimnya pengetahuan yang kami miliki dalam pembuatan laporan ini, sehingga kami mohon saran dan kesannya agar laporan ini dapat menjadi lebih baik lagi. Terima kasih.
 </p>
+
+<p>Kelompok 10:
+	<li>Khonsa Salsabila	[18081010028]
+	<li>Amirah Aulia Fitri	[18081010029]
