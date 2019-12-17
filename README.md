@@ -15,4 +15,8 @@
   	<li>Tambah Data</li>
 	<li>Ubah Data</li>
 	<li>Pencarian Data Berdasarkan Kriteria Datanya ( Nomor Kendaraan, Nomor Tiket, Bobot Kendaraan)</li>
-	<li>Pengurutan Data berdasarkan Kriteria Datanya (Nomor Tiket, Nomor Kendaraan, Jenis Kendaraan, Bobot kendaraan, Tujuan dan Tanggal)</li>
+	<li>Pengurutan Data berdasarkan Kriteria Datanya (Nomor Tiket, Nomor Kendaraan, Jenis Kendaraan, Bobot kendaraan, Tujuan dan 	Tanggal)</li>
+
+<h2>Metode Aplikasi</h2>
+<li>1. Bucked Sort: Bucket sort adalah algoritma berbasis perbandingan yang beroperasi pada elemen dengan mengelompokkannya pada beberapa bucket berbeda lantas bucket tersebut diurutkan secara terpisah. Setiap bucket dapat diurutkan secara terpisah menggunakan algoritma sorting yang berbeda atau dengan menerapkan algoritma bucket sort secara rekursif. Bucket sort amat sangat berguna saat digunakan pada input yang terdistribusi secara seragam dalam rentangan.</li>
+<li>2. Linier (Rekursive Search ) : pencarian linear atau pencarian sekuensial adalah metode untuk menemukan elemen dalam daftar. Itu secara berurutan memeriksa setiap elemen daftar sampai kecocokan ditemukan atau seluruh daftar telah dicari. [1] Pencarian linier berjalan pada waktu linear terburuk dan menghasilkan paling banyak n perbandingan, di mana n adalah panjang daftar. Jika setiap elemen memiliki kemungkinan yang sama untuk dicari, maka pencarian linier memiliki kasus rata-rata.</li>
